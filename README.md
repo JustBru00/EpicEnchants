@@ -7,7 +7,7 @@ Request usage permission by emailing Justin Brubaker at justbru00@gmail.com.
 #License
 
      The code contained inside this repository is Copyright (C) 2016 Justin Brubaker unless otherwise noted.
-     It is forbiden to use this code in your own projects. 
+     It is forbidden to use this code in your own projects. 
      
      THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
