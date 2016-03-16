@@ -1,0 +1,7 @@
+main: com.gmail.justbru00.epic.main.Main
+name: EpicEnchants
+version: 1.0-ALPHA-1
+author: [Justin Brubaker]
+commands:
+    epicenchants:
+        description: License and Info Command.    
