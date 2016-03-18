@@ -1,1 +1,14 @@
-#Soon to be config :D
+#EpicEnchants Config
+#See license information at: https://github.com/JustBru00/EpicEnchants/wiki/Plugin-License
+#This plugin is Copyright (C) 2016 Justin Brubaker
+
+#Enable Debug Mode?
+debugmode: false
+
+enchants:
+  sword-axe:
+    storm:
+      enabled: true
+      chance: .1
+      
+          

@@ -1,6 +1,7 @@
 main: com.gmail.justbru00.epic.main.Main
 name: EpicEnchants
 version: 1.0-ALPHA-1
+description: A plugin that adds some custom enchants.
 author: [Justin Brubaker]
 commands:
     epicenchants:
