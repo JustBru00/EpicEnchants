@@ -7,3 +7,5 @@ depend: [CustomEnchantmentAPI]
 commands:
     epicenchants:
         description: License and Info Command.    
+    epicenchant:
+        description: Enchants an item.      

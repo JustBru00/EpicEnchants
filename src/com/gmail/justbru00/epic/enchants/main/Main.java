@@ -17,6 +17,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.gmail.justbru00.epic.enchants.commands.EpicEnchant;
 import com.gmail.justbru00.epic.enchants.enchants.NewStorm;
 import com.gmail.justbru00.epic.enchants.metrics.Metrics;
 import com.gmail.justbru00.epic.enchants.metrics.Metrics.Graph;
@@ -106,7 +107,7 @@ public class Main extends JavaPlugin {
 		   // End of readying enchants.
 		   
 		   // Command Executors
-		   
+		   getCommand("epicenchant").setExecutor(new EpicEnchant(this));
 		   
 		   // End of Command Executors
 		   
