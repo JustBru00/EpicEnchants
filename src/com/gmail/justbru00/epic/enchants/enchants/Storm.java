@@ -13,6 +13,11 @@ import com.gmail.justbru00.epic.enchants.utils.WeaponChecker;
 
 public class Storm implements Listener {
 
+	/**
+	 * Currenly Broken code. Testing out new api.
+	 * 
+	 */
+	
 	public void onDamageEvent(EntityDamageByEntityEvent e) {
 		if (e.getCause() != DamageCause.ENTITY_ATTACK) return; // If not a entity. Can not be a player.
 		if (!(e.getDamager() instanceof Player)) return; // If damager not a player.

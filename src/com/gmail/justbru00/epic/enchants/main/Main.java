@@ -17,10 +17,13 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.gmail.justbru00.epic.enchants.enchants.Storm;
+import com.gmail.justbru00.epic.enchants.enchants.NewStorm;
 import com.gmail.justbru00.epic.enchants.metrics.Metrics;
 import com.gmail.justbru00.epic.enchants.metrics.Metrics.Graph;
 import com.gmail.justbru00.epic.enchants.utils.Messager;
+
+import adx.audioxd.customenchantmentapi.EnchantmentRegistery;
+import adx.audioxd.customenchantmentapi.enchantment.Enchantment;
 
 public class Main extends JavaPlugin {
 	
@@ -30,6 +33,7 @@ public class Main extends JavaPlugin {
 	public static boolean debugMode = false;
 	public final String PLUGIN_VERSION = this.getDescription().getVersion();
 	public final List<String> PLUGIN_AUTHORS = this.getDescription().getAuthors();
+	public static Enchantment STORM = new NewStorm();
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -73,7 +77,7 @@ public class Main extends JavaPlugin {
 		        
 		    } catch (IOException e) {
 		        // Failed to submit the stats :-(
-		    }
+		    } // End of Metrics code
 		   
 		// Start Plugin Enable.
 		   Messager.msgConsole("&fBeginning Plugin Enable.");
@@ -81,15 +85,21 @@ public class Main extends JavaPlugin {
 		   // Check if debug mode is enabled.
 		   Main.debugMode = config.getBoolean("debugmode");
 		   
-		   // Get enchants ready. (Register approprite listeners.)
+		   // Get enchants ready. 
 		   
 		   PluginManager pl = getServer().getPluginManager();
 		   
 		   if (config.getBoolean("enchants.sword-axe.storm.enabled")) {
-			   Messager.msgConsole("&bEnchant Storm &aEnabled&b.");		
-			   pl.registerEvents(new Storm(),this);
-		   } else {
+			   Messager.msgConsole("&bEnchant Storm Starting Enable&b.");		
+			   // Remove for temp:  pl.registerEvents(new Storm(),this);
+			   
+			   if (!EnchantmentRegistery.register(this, STORM)) {
+		           Messager.msgConsole("Couldn't enable " + STORM.getName() + " enchantment.");		
+		           Messager.msgConsole("&bEnchant Storm &4Disabled&b.");	           
+			   }			   
 			   Messager.msgConsole("&bEnchant Storm &aEnabled&b.");
+		   } else {
+			   Messager.msgConsole("&bEnchant Storm &4Disabled&b.");
 		   }
 		   
 		   Messager.msgConsole("&fEnchants Ready.");
